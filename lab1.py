@@ -1,18 +1,19 @@
 # Зад 1
-number = int(input('Введите число:'))
-isNature = True
-while isNature:
-    if number > 0:
-        break
-    else:
-        number = int(input('Введите натуральное число:'))
-sum=0
-remainder=0
-while number>=1:
-    remainder=number%10
+while True:
+    try:
+        number = int(input('Введите натуральное число: '))
+        if number > 0:
+            break
+        else:
+            print('Число должно быть натуральным.')
+    except ValueError:
+        print('Ошибка ввода.')
+
+while number >= 1:
+    remainder = number % 10
     if remainder % 2 == 0:
-        sum+=remainder
-    number //=10
+        sum += remainder
+    number //= 10
 if sum > 0:
     print(f'Сумма чётных цифр равна {sum}')
 else:
